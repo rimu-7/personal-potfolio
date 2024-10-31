@@ -105,7 +105,7 @@ const Contacts = () => {
             />
             <motion.button
             whileInView={{opacity:1, x:0}}
-            initial={{opacity:0, x: 200}}
+            initial={{opacity:0, x: 100}}
             transition={{duration: 1}}
               className="self-end bg-royalblue rounded-lg p-2 font-medium cursor-pointer border border-neutral-700 bg-green-200 text-neutral-700"
               onClick={handleSendMessage}
