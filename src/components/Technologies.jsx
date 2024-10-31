@@ -13,9 +13,13 @@ import { SiCplusplus } from "react-icons/si";
 import { SiTensorflow } from "react-icons/si";
 import { SiArchlinux } from "react-icons/si";
 import { DiJava } from "react-icons/di";
-
+import { SiHtml5 } from "react-icons/si"; 
+import { SiCss3 } from "react-icons/si"; 
+import { SiTailwindcss } from "react-icons/si"; 
 import { SiNvidia } from "react-icons/si";
+
 import { motion } from "framer-motion";
+
 
 const iconVariants = (duration) => ({
   initial: { y: 0 },
@@ -54,6 +58,30 @@ const Technologies = () => {
           className="rounded-2xl border-4 border-neutral-800 p-4"
         >
           <RiReactjsLine className="text-7xl text-cyan-400" />
+        </motion.div>
+        <motion.div
+          variants={iconVariants(1.8)}
+          initial="initial"
+          animate="animate"
+          className="rounded-2xl border-4 border-neutral-800 p-4"
+        >
+          <SiHtml5 className="text-7xl text-red-600" />
+        </motion.div>
+        <motion.div
+          variants={iconVariants(2.1)}
+          initial="initial"
+          animate="animate"
+          className="rounded-2xl border-4 border-neutral-800 p-4"
+        >
+          <SiCss3 className="text-7xl text-blue-600" />
+        </motion.div>
+        <motion.div
+          variants={iconVariants(2)}
+          initial="initial"
+          animate="animate"
+          className="rounded-2xl border-4 border-neutral-800 p-4"
+        >
+          <SiTailwindcss className="text-7xl text-cyan-400" />
         </motion.div>
 
         <motion.div
@@ -187,6 +215,7 @@ const Technologies = () => {
           <DiJava className="text-7xl text-red-500" />
         </motion.div>
       </motion.div>
+
     </div>
   );
 };
