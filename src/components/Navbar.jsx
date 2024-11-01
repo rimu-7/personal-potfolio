@@ -1,4 +1,4 @@
-import logo from "../assets/ok.png";
+import logo from "../assets/logo.png";
 import { FaLinkedin, FaGithub, FaTwitter, FaInstagram } from "react-icons/fa";
 import { motion } from "framer-motion";
 
@@ -11,7 +11,7 @@ const Navbar = () => {
         transition={{ duration: 1 }}
         className="flex-shrink-0 items-center"
       >
-        <img className="mx-2 w-50" src={logo} alt="logo" />
+        <img className="mx-2 w-16 h-auto" src={logo} alt="logo" />
       </motion.div>
       <motion.div
         whileInView={{ opacity: 1, x: 0 }}
