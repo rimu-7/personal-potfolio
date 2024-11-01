@@ -39,7 +39,7 @@ export const EXPERIENCES = [
     role: "SEO",
     company: "Internship at Jiangsu De-Tech Company Ltd. (March - June)",
     description: `During my internship at Jiangsu De-Tech Company Ltd. as an SEO specialist, I gained hands-on experience in optimizing website content and improving search engine rankings. I collaborated on various projects, enhancing my skills in keyword research, on-page SEO, and analytics. This experience deepened my understanding of digital marketing and improved my problem-solving abilities.`,
-    technologies: ["Ruby", "Rails", "PHP", "Sqlite"],
+    technologies: ["HTML", "TAILWIND CSS", "JAVASCRIPT", "Sqlite", "PYTHON", "On-page SEO"],
   },
 ];
 
