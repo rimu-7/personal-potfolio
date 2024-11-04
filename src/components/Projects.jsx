@@ -41,10 +41,10 @@ const Projects = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <span className="text-sm text-blue-600">{project.title}</span>
+                  <span className="text-xl text-blue-600">{project.title}</span>
                 </a>
               </h6>
-              <p className="mb-4 text-neutral-400">{project.description}</p>
+              <p className="mb-4 text-neutral-400  leading-snug text-justify">{project.description}</p>
               {project.technologies.map((tech, index) => (
                 <span
                   className="mr-2 mt-4 rounded bg-gray-50 px-4 py-1 text-sm font-medium text-green-400"
