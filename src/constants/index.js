@@ -98,7 +98,7 @@ export const PROJECTS = [
 ];
 
 export const CONTACT = {
-  address: "7000 Satellite Road, Chaoyang DIstrict, Changchun City, Jilin, China",
-  // phoneNo: "+86 13255225510",
+  address: "7000 Satellite Road, Chaoyang DIstrict, Changchun 130022, Jilin, China",
+  phoneNo: "+86 13255225510",
   email: "fuadbhai@proton.me",
 };

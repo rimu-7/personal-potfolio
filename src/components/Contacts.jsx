@@ -68,26 +68,26 @@ const Contacts = () => {
         >
           {CONTACT.phoneNo}
         </motion.p>
-        <motion.div 
-        whileInView={{opacity:1, x:0}}
-        initial={{opacity:0, x: -100}}
-        transition={{duration: 1}}>
-        <a
-        
-          href={`mailto:${CONTACT.email}`}
-          className="border-b border-neutral-800"
-          target="_self"
-        >
-          {CONTACT.email}
-        </a>
+        <motion.div
+          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, x: -100 }}
+          transition={{ duration: 1 }}>
+          <a
+
+            href={`mailto:${CONTACT.email}`}
+            className="border-b border-neutral-400"
+            target="_self"
+          >
+            {CONTACT.email}
+          </a>
         </motion.div>
 
         <div className="flex justify-center">
           <form className="flex flex-col gap-4 w-80 p-4 rounded-lg">
             <motion.input
-            whileInView={{opacity:1, x:0}}
-            initial={{opacity:0, x: 200}}
-            transition={{duration: 1}}
+              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, x: 200 }}
+              transition={{ duration: 1 }}
               type="email"
               id="emailInput"
               placeholder="Your email"
@@ -95,18 +95,18 @@ const Contacts = () => {
               required
             />
             <motion.textarea
-            whileInView={{opacity:1, x:0}}
-            initial={{opacity:0, x: -200}}
-            transition={{duration: 1}}
+              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, x: -200 }}
+              transition={{ duration: 1 }}
               id="messageInput"
               placeholder="Your message"
               className="outline-none border border-neutral-700 bg-green-100 rounded-lg p-2 h-40 w-full resize-none text-neutral-900"
               required
             />
             <motion.button
-            whileInView={{opacity:1, x:0}}
-            initial={{opacity:0, x: 100}}
-            transition={{duration: 1}}
+              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, x: 100 }}
+              transition={{ duration: 1 }}
               className="self-end bg-royalblue rounded-lg p-2 font-medium cursor-pointer border border-neutral-700 bg-green-200 text-neutral-700"
               onClick={handleSendMessage}
             >

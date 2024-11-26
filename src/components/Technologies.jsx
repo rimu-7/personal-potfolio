@@ -1,11 +1,11 @@
 import { RiReactjsLine } from "react-icons/ri";
 import { TbBrandNextjs } from "react-icons/tb";
 import { SiMongodb } from "react-icons/si";
-import { DiRedis } from "react-icons/di";
+// import { DiRedis } from "react-icons/di";
 import { FaNodeJs } from "react-icons/fa";
-import { SiPostgresql } from "react-icons/si";
+// import { SiPostgresql } from "react-icons/si";
 import { SiPython } from "react-icons/si";
-import { AiOutlineRobot } from "react-icons/ai";
+// import { AiOutlineRobot } from "react-icons/ai";
 import { SiFlask } from "react-icons/si";
 import { SiMysql } from "react-icons/si";
 import { SiPhp } from "react-icons/si";
@@ -13,13 +13,12 @@ import { SiCplusplus } from "react-icons/si";
 import { SiTensorflow } from "react-icons/si";
 import { SiArchlinux } from "react-icons/si";
 import { DiJava } from "react-icons/di";
-import { SiHtml5 } from "react-icons/si"; 
-import { SiCss3 } from "react-icons/si"; 
-import { SiTailwindcss } from "react-icons/si"; 
-import { SiNvidia } from "react-icons/si";
+import { SiHtml5 } from "react-icons/si";
+import { SiCss3 } from "react-icons/si";
+import { SiTailwindcss } from "react-icons/si";
+// import { SiNvidia } from "react-icons/si";
 
 import { motion } from "framer-motion";
-
 
 const iconVariants = (duration) => ({
   initial: { y: 0 },
@@ -51,14 +50,7 @@ const Technologies = () => {
         transition={{ duration: 1 }}
         className="flex flex-wrap justify-center gap-4"
       >
-        <motion.div
-          variants={iconVariants(2.5)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <RiReactjsLine className="text-7xl text-cyan-400" />
-        </motion.div>
+        
         <motion.div
           variants={iconVariants(1.8)}
           initial="initial"
@@ -83,6 +75,22 @@ const Technologies = () => {
         >
           <SiTailwindcss className="text-7xl text-cyan-400" />
         </motion.div>
+        <motion.div
+          variants={iconVariants(2.5)}
+          initial="initial"
+          animate="animate"
+          className="rounded-2xl border-4 border-neutral-800 p-4"
+        >
+          <FaNodeJs className="text-7xl text-green-500" />
+        </motion.div>
+        <motion.div
+          variants={iconVariants(2.5)}
+          initial="initial"
+          animate="animate"
+          className="rounded-2xl border-4 border-neutral-800 p-4"
+        >
+          <RiReactjsLine className="text-7xl text-cyan-400" />
+        </motion.div>
 
         <motion.div
           variants={iconVariants(2.9)}
@@ -100,30 +108,23 @@ const Technologies = () => {
         >
           <SiMongodb className="text-7xl text-green-500" />
         </motion.div>
-        <motion.div
+        {/* <motion.div
           variants={iconVariants(3)}
           initial="initial"
           animate="animate"
           className="rounded-2xl border-4 border-neutral-800 p-4"
         >
           <DiRedis className="text-7xl text-red-700" />
-        </motion.div>
-        <motion.div
-          variants={iconVariants(2.5)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <FaNodeJs className="text-7xl text-green-500" />
-        </motion.div>
-        <motion.div
+        </motion.div> */}
+        
+        {/* <motion.div
           variants={iconVariants(2.1)}
           initial="initial"
           animate="animate"
           className="rounded-2xl border-4 border-neutral-800 p-4"
         >
           <SiPostgresql className="text-7xl text-sky-700" />
-        </motion.div>
+        </motion.div> */}
         <motion.div
           variants={iconVariants(3)}
           initial="initial"
@@ -133,13 +134,21 @@ const Technologies = () => {
           <SiPython className="text-7xl text-yellow-300" />
         </motion.div>
         <motion.div
+          variants={iconVariants(2.9)}
+          initial="initial"
+          animate="animate"
+          className="rounded-2xl border-4 border-neutral-800 p-4"
+        >
+          <SiFlask className="text-7xl text-blue-500" />
+        </motion.div>
+        {/* <motion.div
           variants={iconVariants(2.5)}
           initial="initial"
           animate="animate"
           className="rounded-2xl border-4 border-neutral-800 p-4"
         >
           <AiOutlineRobot className="text-7xl text-blue-500" />
-        </motion.div>
+        </motion.div> */}
         <motion.div
           variants={iconVariants(2)}
           initial="initial"
@@ -149,14 +158,7 @@ const Technologies = () => {
           <SiTensorflow className="text-7xl text-orange-500" />
         </motion.div>
 
-        <motion.div
-          variants={iconVariants(2.9)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <SiFlask className="text-7xl text-blue-500" />
-        </motion.div>
+      
         <motion.div
           variants={iconVariants(2.4)}
           initial="initial"
@@ -181,14 +183,14 @@ const Technologies = () => {
         >
           <SiCplusplus className="text-7xl text-blue-500" />
         </motion.div>
-        <motion.div
+        {/* <motion.div
           variants={iconVariants(4)}
           initial="initial"
           animate="animate"
           className="rounded-2xl border-4 border-neutral-800 p-4"
         >
           <SiNvidia className="text-7xl text-green-500" />
-        </motion.div>
+        </motion.div> */}
 
         <motion.div
           variants={iconVariants(2.5)}
@@ -215,7 +217,6 @@ const Technologies = () => {
           <DiJava className="text-7xl text-red-500" />
         </motion.div>
       </motion.div>
-
     </div>
   );
 };
