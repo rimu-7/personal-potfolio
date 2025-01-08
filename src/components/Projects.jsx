@@ -44,10 +44,15 @@ const Projects = () => {
                   <span className="text-xl text-blue-600">{project.title}</span>
                 </a>
               </h6>
-              <p className="mb-4 text-neutral-400  leading-snug text-justify">{project.description}</p>
+              <p className="mb-4 text-neutral-400  leading-snug text-justify">
+                {project.description}
+              </p>
+              <p className="mb-4 text-neutral-400  leading-snug text-justify">
+                {project.features}
+              </p>
               {project.technologies.map((tech, index) => (
                 <span
-                  className="mr-2 mt-4 rounded bg-gray-50 px-4 py-1 text-sm font-medium text-green-400"
+                  className="rounded bg-gray-50 p-1 px-1 py-1 mr-2 mb-2 text-sm font-medium text-green-400 inline-block"
                   key={index}
                 >
                   {tech}

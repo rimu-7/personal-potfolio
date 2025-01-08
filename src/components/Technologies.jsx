@@ -4,18 +4,21 @@ import { SiMongodb } from "react-icons/si";
 // import { DiRedis } from "react-icons/di";
 import { FaNodeJs } from "react-icons/fa";
 // import { SiPostgresql } from "react-icons/si";
-import { SiPython } from "react-icons/si";
+import { FaRobot } from "react-icons/fa";
 // import { AiOutlineRobot } from "react-icons/ai";
 import { SiFlask } from "react-icons/si";
 import { SiMysql } from "react-icons/si";
 import { SiPhp } from "react-icons/si";
 import { SiCplusplus } from "react-icons/si";
 import { SiTensorflow } from "react-icons/si";
-import { SiArchlinux } from "react-icons/si";
+// import { SiArchlinux } from "react-icons/si";
 import { DiJava } from "react-icons/di";
 import { SiHtml5 } from "react-icons/si";
 import { SiCss3 } from "react-icons/si";
 import { SiTailwindcss } from "react-icons/si";
+import { GrFedora } from "react-icons/gr";
+import { AiOutlineDotNet } from "react-icons/ai";
+
 // import { SiNvidia } from "react-icons/si";
 
 import { motion } from "framer-motion";
@@ -131,7 +134,7 @@ const Technologies = () => {
           animate="animate"
           className="rounded-2xl border-4 border-neutral-800 p-4"
         >
-          <SiPython className="text-7xl text-yellow-300" />
+          <FaRobot className="text-7xl text-yellow-300" />
         </motion.div>
         <motion.div
           variants={iconVariants(2.9)}
@@ -198,7 +201,8 @@ const Technologies = () => {
           animate="animate"
           className="rounded-2xl border-4 border-neutral-800 p-3 flex justify-center"
         >
-          <img src="/opencl.svg" alt="OpenCL Logo" className="h-10 w-20" />
+          
+          <AiOutlineDotNet className="text-7xl "/>
         </motion.div>
         <motion.div
           variants={iconVariants(2)}
@@ -206,7 +210,7 @@ const Technologies = () => {
           animate="animate"
           className="rounded-2xl border-4 border-neutral-800 p-4"
         >
-          <SiArchlinux className="text-7xl text-blue-500" />
+          <GrFedora className="text-7xl text-blue-500" />
         </motion.div>
         <motion.div
           variants={iconVariants(2)}
