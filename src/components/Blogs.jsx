@@ -35,7 +35,7 @@ const Blogs = () => {
   }, []);
 
   if (loading) {
-    return <div className="text-center mt-10">Loading blogs...</div>;
+    return <div className="text-2xl text-center col-span-full mt-10">Loading blogs...</div>;
   }
 
   return (
