@@ -38,12 +38,12 @@ const iconVariants = (duration) => ({
 
 const Technologies = () => {
   return (
-    <div className="border-b border-neutral-800 pb-24">
+    <div className="py-10 ">
       <motion.h2
         whileInView={{ opacity: 1, y: 0 }}
         initial={{ opacity: 0, y: 200 }}
         transition={{ duration: 1 }}
-        className="my-20 text-center text-4xl"
+        className="my-10 text-center text-4xl"
       >
         Technologies
       </motion.h2>

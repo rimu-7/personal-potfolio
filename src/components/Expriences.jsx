@@ -3,15 +3,15 @@ import { motion } from "framer-motion";
 
 const Expriences = () => {
   return (
-    <div className="border-b border-neutral-800 pb-4">
-      <motion.h2
-        whileInView={{ opacity: 1, y: 0 }}
-        initial={{ opacity: 0, y: 200 }}
-        transition={{ duration: 1 }}
-        className="my-20 text-center  text-4xl"
-      >
-        Expriences
-      </motion.h2>
+    <div className="fixed bg-green-200 w-full h-full   ">
+     <motion.h2
+      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, y: 200 }}
+      transition={{ duration: 1 }}
+      className="my-20 text-center  text-4xl"
+    >
+      Expriences
+    </motion.h2>
       <div className="">
         {EXPERIENCES.map((exprience, index) => (
           <div key={index} className="mb-8 py-2 flex flex-wrap lg:justify-center">
@@ -38,7 +38,7 @@ const Expriences = () => {
               <p className="mb-4 text-neutral-400 leading-snug text-justify">{exprience.description}</p>
               {exprience.technologies.map((tech, index) => (
                 <span
-                  className="mr-2 mb-2 my-2 rounded bg-gray-50 px-4 py-0.5  text-sm font-medium text-green-400"
+                  className="mr-2 mb-2 my-2 rounded bg-gray-700 px-4 py-0.5  text-sm font-medium text-rose-400"
                   key={index}
                 >
                   {tech}

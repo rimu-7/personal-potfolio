@@ -12,69 +12,82 @@ const Projects = () => {
   }, []);
 
   return (
-    <div className="border-b border-neutral-800 pb-4">
+    <div className="min-h-screen  border-neutral-800  px-4">
       <motion.h2
         whileInView={{ opacity: 1, y: 0 }}
-        initial={{ opacity: 0, y: 200 }}
+        initial={{ opacity: 0, y: 50 }}
         transition={{ duration: 1 }}
-        className="my-20 text-center text-4xl "
+        className="my-16 text-center text-4xl font-bold"
       >
         Projects
       </motion.h2>
-      <div>
+      <div className="max-w-5xl mx-auto ">
         {projects.map((project, index) => (
-          <div className="mb-8 flex flex-wrap lg:justify-center" key={index}>
+          <div
+            className="mb-10 flex flex-col lg:flex-row items-center border-b border-neutral-800 p-2 sm:border-hidden lg:items-start gap-6"
+            key={index}
+          >
+            {/* Project Image */}
             <motion.div
               whileInView={{ opacity: 1, x: 0 }}
-              initial={{ opacity: 0, x: -200 }}
+              initial={{ opacity: 0, x: -50 }}
               transition={{ duration: 1 }}
-              className="w-full lg:w-1/4"
+              className="flex-shrink-0  max-w-[300px] lg:w-1/3"
             >
               <img
                 src={project.image}
-                width={200}
-                height={200}
                 alt={project.title}
-                className="mb-6 rounded"
+                className=" h-auto rounded-lg shadow-lg"
               />
             </motion.div>
+
+            {/* Project Details */}
             <motion.div
               whileInView={{ opacity: 1, x: 0 }}
-              initial={{ opacity: 0, x: 200 }}
+              initial={{ opacity: 0, x: 50 }}
               transition={{ duration: 1 }}
-              className="w-full max-w-xl lg:w-3/4"
+              className=" lg:w-2/3"
             >
-              <h6 className="mb-2 font-semibold">
+              <h6 className="mb-3 font-semibold text-xl">
                 <a
                   href={project.githubrepo}
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="text-blue-500 hover:underline"
                 >
-                  <span className="text-xl text-blue-600">{project.title}</span>
+                  {project.title}
                 </a>
-                <br />
+                {"  |  "}
                 <a
                   href={project.liveDemo}
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="text-green-500 hover:underline"
                 >
-                  <span className="text-xl text-blue-600">Live Demo🚀</span>
+                  Live Demo 🚀
                 </a>
               </h6>
-              <p className="mb-4 text-neutral-400 leading-snug text-justify">
+
+              <p className="mb-4 text-neutral-500 text-justify">
                 {project.description}
               </p>
-              <p className="mb-4 text-neutral-400 leading-snug text-justify">
-                {project.features && project.features.join(", ")}
-              </p>
-              {project.technologies.map((tech, index) => (
-                <span
-                  className="rounded bg-gray-50 p-1 px-1 py-1 mr-2 mb-2 text-sm font-medium text-rose-400 inline-block"
-                  key={index}
-                >
-                  {tech}
-                </span>
-              ))}
+
+              {project.features && (
+                <p className="mb-4 text-neutral-700 text-justify">
+                  <strong>Features:</strong> {project.features.join(", ")}
+                </p>
+              )}
+
+              <div className="flex flex-wrap gap-2">
+                {project.technologies.map((tech, idx) => (
+                  <span
+                    key={idx}
+                    className="bg-gray-700 text-rose-400 text-sm font-medium px-3 py-1 rounded-md"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
             </motion.div>
           </div>
         ))}
