@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import DropdownMenu from "./DropdownMenu";
 import MobileNav from "./MobileNav";
 import NavButton from "./NavButton";
+import Logo from "./Logo";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -34,7 +35,7 @@ const Navbar = () => {
       <div className="flex items-center justify-between px-6 h-10 sm:px-1">
         {/* Left - Logo */}
         <div className="flex-shrink-0">
-          {/* <Logo /> */}
+          <Logo />
         </div>
 
         {/* Center - Navbar Links (Hidden on small screens) */}
