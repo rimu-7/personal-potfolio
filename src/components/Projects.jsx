@@ -1,7 +1,16 @@
-import { PROJECTS } from "../constants";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 const Projects = () => {
+  const [projects, setProjects] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/api/projects") // Update the URL if deployed
+      .then((response) => response.json())
+      .then((data) => setProjects(data))
+      .catch((error) => console.error("Error fetching projects:", error));
+  }, []);
+
   return (
     <div className="border-b border-neutral-800 pb-4">
       <motion.h2
@@ -13,7 +22,7 @@ const Projects = () => {
         Projects
       </motion.h2>
       <div>
-        {PROJECTS.map((project, index) => (
+        {projects.map((project, index) => (
           <div className="mb-8 flex flex-wrap lg:justify-center" key={index}>
             <motion.div
               whileInView={{ opacity: 1, x: 0 }}
@@ -44,11 +53,11 @@ const Projects = () => {
                   <span className="text-xl text-blue-600">{project.title}</span>
                 </a>
               </h6>
-              <p className="mb-4 text-neutral-400  leading-snug text-justify">
+              <p className="mb-4 text-neutral-400 leading-snug text-justify">
                 {project.description}
               </p>
-              <p className="mb-4 text-neutral-400  leading-snug text-justify">
-                {project.features}
+              <p className="mb-4 text-neutral-400 leading-snug text-justify">
+                {project.features && project.features.join(", ")}
               </p>
               {project.technologies.map((tech, index) => (
                 <span
