@@ -11,6 +11,9 @@ const Projects = () => {
       .catch((error) => console.error("Error fetching projects:", error));
   }, []);
 
+  //check if the project has feature or not
+  const hasFeatures = projects.features && projects.features.length > 0;
+
   return (
     <div className="min-h-screen  border-neutral-800  px-4">
       <motion.h2
@@ -72,11 +75,15 @@ const Projects = () => {
                 {project.description}
               </p>
 
-              {project.features && (
-                <p className="mb-4 text-neutral-700 text-justify">
-                  <strong>Features:</strong> {project.features.join(", ")}
-                </p>
-              )}
+              <div>
+                {hasFeatures && (
+                  <p className="mb-4 text-neutral-700 text-justify">
+                    <strong>Features:</strong> {project.features.join(", ")}
+                  </p>
+                )}
+                
+              </div>
+
 
               <div className="flex flex-wrap gap-2">
                 {project.technologies.map((tech, idx) => (
