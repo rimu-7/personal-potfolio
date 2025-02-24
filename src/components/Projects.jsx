@@ -5,7 +5,7 @@ const Projects = () => {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/projects") // Update the URL if deployed
+    fetch("https://personal-backend-nine.vercel.app/api/projects") // Update the URL if deployed
       .then((response) => response.json())
       .then((data) => setProjects(data))
       .catch((error) => console.error("Error fetching projects:", error));
@@ -52,6 +52,14 @@ const Projects = () => {
                 >
                   <span className="text-xl text-blue-600">{project.title}</span>
                 </a>
+                <br />
+                <a
+                  href={project.liveDemo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span className="text-xl text-blue-600">Live Demo🚀</span>
+                </a>
               </h6>
               <p className="mb-4 text-neutral-400 leading-snug text-justify">
                 {project.description}
@@ -61,7 +69,7 @@ const Projects = () => {
               </p>
               {project.technologies.map((tech, index) => (
                 <span
-                  className="rounded bg-gray-50 p-1 px-1 py-1 mr-2 mb-2 text-sm font-medium text-green-400 inline-block"
+                  className="rounded bg-gray-50 p-1 px-1 py-1 mr-2 mb-2 text-sm font-medium text-rose-400 inline-block"
                   key={index}
                 >
                   {tech}
