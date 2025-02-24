@@ -5,7 +5,7 @@ import Technologies from "./Technologies";
 
 const About = () => {
   return (
-    <div className="">
+    <div className="px-4">
       <div className="border-b border-neutral-900 pb-4">
         <motion.h2
           whileInView={{ opacity: 1, y: 0 }}

@@ -41,7 +41,7 @@ const Contacts = () => {
   };
 
   return (
-    <div className="border-b border-neutral-800 pb-20">
+    <div className=" pb-20">
       <motion.h2
         whileInView={{ opacity: 1, y: 0 }}
         initial={{ opacity: 0, y: 100 }}
@@ -50,7 +50,7 @@ const Contacts = () => {
       >
         Get In Touch
       </motion.h2>
-      <div className="text-center text-neutral-400">
+      <div className="text-center text-neutral-500">
         <motion.p
           whileInView={{ opacity: 1, x: 0 }}
           initial={{ opacity: 0, x: 100 }}
@@ -107,7 +107,7 @@ const Contacts = () => {
               whileInView={{ opacity: 1, x: 0 }}
               initial={{ opacity: 0, x: 100 }}
               transition={{ duration: 1 }}
-              className="self-end bg-royalblue rounded-lg p-2 font-medium cursor-pointer border border-neutral-700 bg-green-200 text-neutral-700"
+              className="self-end bg-royalblue rounded-lg p-2 font-medium cursor-pointer border border-neutral-700 bg-green-300 text-neutral-700"
               onClick={handleSendMessage}
             >
               Submit
@@ -115,7 +115,7 @@ const Contacts = () => {
           </form>
         </div>
         {isSubmitted && (
-          <div className="mt-4 text-green-600">Message sent successfully!</div>
+          <div className="mt-4 text-green-500">Message sent successfully!</div>
         )}
       </div>
     </div>
