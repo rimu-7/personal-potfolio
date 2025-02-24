@@ -53,7 +53,7 @@ const Technologies = () => {
         transition={{ duration: 1 }}
         className="flex flex-wrap justify-center gap-4"
       >
-        
+
         <motion.div
           variants={iconVariants(1.8)}
           initial="initial"
@@ -119,7 +119,7 @@ const Technologies = () => {
         >
           <DiRedis className="text-7xl text-red-700" />
         </motion.div> */}
-        
+
         {/* <motion.div
           variants={iconVariants(2.1)}
           initial="initial"
@@ -161,7 +161,7 @@ const Technologies = () => {
           <SiTensorflow className="text-7xl text-orange-500" />
         </motion.div>
 
-      
+
         <motion.div
           variants={iconVariants(2.4)}
           initial="initial"
@@ -201,8 +201,8 @@ const Technologies = () => {
           animate="animate"
           className="rounded-2xl border-4 border-neutral-800 p-3 flex justify-center"
         >
-          
-          <AiOutlineDotNet className="text-7xl "/>
+
+          <AiOutlineDotNet className="text-7xl " />
         </motion.div>
         <motion.div
           variants={iconVariants(2)}

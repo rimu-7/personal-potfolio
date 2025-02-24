@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-
 const Blogs = () => {
   const [blogs, setBlogs] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -36,45 +35,43 @@ const Blogs = () => {
   }, []);
 
   if (loading) {
-    return <div className=" text-center mt-10">Loading blogs...</div>;
+    return <div className="text-center mt-10">Loading blogs...</div>;
   }
 
   return (
-    <div className="">
-     
-      <div className=" flex  flex-col h-full mx-auto">
-        <div className="flex-grow ">
-          <div className="flex flex-col mx-auto w-80 gap-4 ">
-            {blogs.length === 0 ? (
-              <p className=" text-6xl flex justify-center items-center text-center">No blogs available.</p>
-            ) : (
-              blogs.map((blog) => (
-                <Link
-                  to={`/blogdetails/${blog.blog_id}`}
-                  key={blog.blog_id}
-                  className="border border-neutral-700 p-2 rounded-lg cursor-pointer"
-                >
-                  <img
-                    src={blog.blog_image}
-                    alt={blog.blog_title}
-                    className="w-full h-48 object-cover rounded-lg"
-                  />
+    <div className="fixed sm:mx-40 bg-green-200 w-full h-full px-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {blogs.length === 0 ? (
+          <p className="text-2xl text-center col-span-full">No blogs available.</p>
+        ) : (
+          blogs.map((blog) => (
+            <div
+              key={blog.blog_id}
+              className="border border-neutral-700 p-2 w-96 h-66  rounded-lg shadow-lg hover:shadow-xl transition overflow-hidden"
+            >
+              <Link to={`/blogdetails/${blog.blog_id}`}>
+                <img
+                  src={blog.blog_image}
+                  alt={blog.blog_title}
+                  className="w-full h-52 rounded-md object-cover"
+                />
+                <div className="p-2">
                   <h3
-                    className="text-lg font-semibold mt-2"
+                    className="text-lg font-semibold truncate"
                     title={blog.blog_title}
                   >
                     {blog.blog_title.length > 50
                       ? `${blog.blog_title.substring(0, 50)}...`
                       : blog.blog_title}
                   </h3>
-                </Link>
-              ))
-            )}
-          </div>
-        </div>
+                </div>
+              </Link>
+            </div>
+          ))
+        )}
       </div>
-      
     </div>
+
   );
 };
 

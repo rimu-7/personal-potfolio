@@ -1,7 +1,7 @@
 import { EXPERIENCES } from "../constants";
 import { motion } from "framer-motion";
 
-const Expriences = () => {
+const Experiences = () => {
   return (
     <div className="fixed bg-green-200 w-full h-full px-4   ">
      <motion.h2
@@ -10,7 +10,7 @@ const Expriences = () => {
       transition={{ duration: 1 }}
       className="my-20 text-center  text-4xl"
     >
-      Expriences
+      Experiences
     </motion.h2>
       <div className="">
         {EXPERIENCES.map((exprience, index) => (
@@ -21,7 +21,7 @@ const Expriences = () => {
               transition={{ duration: 1 }}
               className="w-full lg:w-1/4"
             >
-              <p className="mb-2 text-sm text-neutral-500">{exprience.year}</p>
+              <p className="mb-2 text-lg text-neutral-500">{exprience.year}</p>
             </motion.div>
             <motion.div
               whileInView={{ opacity: 1, x: 0 }}
@@ -30,8 +30,8 @@ const Expriences = () => {
               className="w-full max-w-xl lg:w-3/4"
             >
               <h6 className="mb-2 font-semibold">
-                <span className="text-purple-600 text-xl"> {exprience.role} - </span>{" "}
-                <span className="text-s text-purple-400 ">
+                <span className="text-rose-500 text-xl"> {exprience.role} - </span>{" "}
+                <span className="text-s text-rose-400 ">
                   {exprience.company}
                 </span>
               </h6>
@@ -52,4 +52,4 @@ const Expriences = () => {
   );
 };
 
-export default Expriences;
+export default Experiences;

@@ -26,7 +26,7 @@ const menuItems = [
   { name: "Home", path: "/" },
   {name:"About", path:"/about"},
   {name:"Contact", path:"/contact"},
-  { name: "Exprinces", path: "/expriences" },
+  { name: "Exprinces", path: "/experiences" },
   { name: "Blogs", path: "/blogs" },
   { name: "Projects", path: "/projects" },
 ];
@@ -55,7 +55,7 @@ const DropdownMenu = () => {
           >
             <Link
               to={item.path}
-              className="hover:scale-105 hover:duration-500  transition-transform"
+              className="hover:scale-125 text-2xl text-green-500 font-bold hover:duration-500  transition-transform"
             >
               {item.name}
             </Link>
@@ -64,7 +64,7 @@ const DropdownMenu = () => {
             {selectedTab === item.path && (
               <motion.div
                 layoutId="underline"
-                className="absolute left-0 right-0 h-[3px]  bottom-[-4px] "
+                className="absolute left-0 right-0 h-[3px] bg-green-400  bottom-[-4px] "
                 initial={false}
                 animate={{ backgroundColor: "" }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}

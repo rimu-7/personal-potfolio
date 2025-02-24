@@ -3,13 +3,41 @@ import { motion } from "framer-motion";
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);
-
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  
   useEffect(() => {
     fetch("https://personal-backend-nine.vercel.app/api/projects") // Update the URL if deployed
-      .then((response) => response.json())
-      .then((data) => setProjects(data))
-      .catch((error) => console.error("Error fetching projects:", error));
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setProjects(data);
+        setError(null); // Clear error state if successful
+      })
+      .catch((error) => {
+        console.error("Error fetching projects:", error);
+        setError("Failed to load projects. Please try again later.");
+      })
+      .finally(() => setLoading(false));
   }, []);
+  
+  if (loading) {
+    return <div className="text-center text-2xl mt-10">Loading Projects...</div>;
+  }
+  
+  if (error) {
+    return <div className="text-center mt-10 text-red-500">{error}</div>;
+  }
+  
+  // Render projects list here
+  
+  
+  // Render projects list here
+  
 
   //check if the project has feature or not
   const hasFeatures = projects.features && projects.features.length > 0;

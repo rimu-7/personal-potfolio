@@ -26,7 +26,7 @@ const menuItems = [
   { name: "Home", path: "/" },
   {name:"About", path:"/about"},
   {name:"Contact", path:"/contact"},
-  { name: "Exprinces", path: "/expriences" },
+  { name: "Exprinces", path: "/experiences" },
   { name: "Blogs", path: "/blogs" },
   { name: "Projects", path: "/projects" },
 ];

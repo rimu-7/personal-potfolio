@@ -5,7 +5,7 @@ import Technologies from "./Technologies";
 
 const About = () => {
   return (
-    <div className="px-4">
+    <div className="px-4 ">
       <div className="border-b border-neutral-900 pb-4">
         <motion.h2
           whileInView={{ opacity: 1, y: 0 }}
@@ -14,7 +14,7 @@ const About = () => {
           className="my-20 text-center text-4xl"
         >
           About
-          <span className="text-neutral-600"> Me</span>
+          <span className="text-neutral-500"> Me</span>
         </motion.h2>
         <div className="flex flex-wrap">
           <motion.div

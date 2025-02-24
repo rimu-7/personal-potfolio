@@ -1,13 +1,12 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../Layout/Main";
 
-
 import About from "../components/About";
 import Contacts from "../components/Contacts";
 import Hero from "../components/Hero";
 import ErrorPage from "../ErrorPage/ErrorPage";
 import Blogs from "../components/Blogs";
-import Expriences from "../components/Expriences";
+import Experiences from "../components/Experiences"; // Fixed spelling
 import Projects from "../components/Projects";
 import BlogDetails from "../components/BlogDetails";
 
@@ -18,36 +17,32 @@ export const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
-        path: "/",
+        index: true, // Equivalent to path: "", sets Hero as the default child
         element: <Hero />, // Home Page
       },
       {
-        path: "/about",
+        path: "about",
         element: <About />,
       },
       {
-        path: "/blogs",
+        path: "blogs",
         element: <Blogs />,
       },
       {
-        path: "/contact",
+        path: "contact",
         element: <Contacts />,
       },
       {
-        path: "/projects",
+        path: "projects",
         element: <Projects />,
       },
       {
-        path: "/expriences",
-        element: <Expriences />,
+        path: "experiences", // Fixed spelling
+        element: <Experiences />,
       },
       {
-        path: "/blogdetails/:id",
+        path: "blogdetails/:id",
         element: <BlogDetails />,
-      },
-      {
-        path: "/expriences",
-        element: <Expriences />,
       },
     ],
   },
