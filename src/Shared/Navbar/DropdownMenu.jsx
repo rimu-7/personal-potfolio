@@ -24,8 +24,8 @@ const transition = {
 };
 const menuItems = [
   { name: "Home", path: "/" },
-  {name:"About", path:"/about"},
-  {name:"Contact", path:"/contact"},
+  { name: "About", path: "/about" },
+  { name: "Contact", path: "/contact" },
   { name: "Exprinces", path: "/experiences" },
   { name: "Blogs", path: "/blogs" },
   { name: "Projects", path: "/projects" },
@@ -64,12 +64,13 @@ const DropdownMenu = () => {
             {selectedTab === item.path && (
               <motion.div
                 layoutId="underline"
-                className="absolute left-0 right-0 h-[3px] bg-green-400  bottom-[-4px] "
+                className="absolute left-0 right-0 h-[3px] bg-green-400 bottom-[-4px]"
                 initial={false}
-                animate={{ backgroundColor: "" }}
-                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                animate={{ backgroundColor: "rgb(74, 222, 128)" }} // Ensure smooth transition of background color
+                transition={{ type: "spring", stiffness: 150, damping: 70 }} // Adjusted for a smoother effect
               />
             )}
+
           </motion.li>
         ))}
       </motion.ul>

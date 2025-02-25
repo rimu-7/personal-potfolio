@@ -47,7 +47,7 @@ const Projects = () => {
       <motion.h2
         whileInView={{ opacity: 1, y: 0 }}
         initial={{ opacity: 0, y: 50 }}
-        transition={{ duration: 1 }}
+        transition={{ duration: 2 }}
         className="my-16 text-center text-4xl font-bold"
       >
         Projects
@@ -62,7 +62,7 @@ const Projects = () => {
             <motion.div
               whileInView={{ opacity: 1, x: 0 }}
               initial={{ opacity: 0, x: -50 }}
-              transition={{ duration: 1 }}
+              transition={{ duration: 2 }}
               className="flex-shrink-0  max-w-[300px] lg:w-1/3"
             >
               <img
@@ -76,7 +76,7 @@ const Projects = () => {
             <motion.div
               whileInView={{ opacity: 1, x: 0 }}
               initial={{ opacity: 0, x: 50 }}
-              transition={{ duration: 1 }}
+              transition={{ duration: 2 }}
               className=" lg:w-2/3"
             >
               <h6 className="mb-3 font-semibold text-xl">

@@ -43,184 +43,46 @@ const Technologies = () => {
         whileInView={{ opacity: 1, y: 0 }}
         initial={{ opacity: 0, y: 200 }}
         transition={{ duration: 1 }}
-        className="my-10 text-center text-4xl"
+        className="my-5 text-center text-4xl"
       >
         Technologies
       </motion.h2>
       <motion.div
-        whileInView={{ opacity: 1, y: 0 }}
-        initial={{ opacity: 0, y: -200 }}
-        transition={{ duration: 1 }}
-        className="flex flex-wrap justify-center gap-4"
-      >
+  whileInView={{ opacity: 1, y: 0 }}
+  initial={{ opacity: 0, y: -200 }}
+  transition={{ duration: 1 }}
+  className="flex flex-wrap justify-center gap-4"
+>
+  {[
+    { icon: <SiHtml5 className="text-2xl text-red-600" />, delay: 1.8 },
+    { icon: <SiCss3 className="text-2xl text-blue-600" />, delay: 2.1 },
+    { icon: <SiTailwindcss className="text-2xl text-cyan-400" />, delay: 2 },
+    { icon: <FaNodeJs className="text-2xl text-green-500" />, delay: 2.5 },
+    { icon: <RiReactjsLine className="text-2xl text-cyan-400" />, delay: 2.5 },
+    { icon: <TbBrandNextjs className="text-2xl" />, delay: 2.9 },
+    { icon: <SiMongodb className="text-2xl text-green-500" />, delay: 2 },
+    { icon: <FaRobot className="text-2xl text-yellow-300" />, delay: 3 },
+    { icon: <SiFlask className="text-2xl text-blue-500" />, delay: 2.9 },
+    { icon: <SiTensorflow className="text-2xl text-orange-500" />, delay: 2 },
+    { icon: <SiMysql className="text-2xl text-blue-700" />, delay: 2.4 },
+    { icon: <SiPhp className="text-2xl text-purple-500" />, delay: 1.9 },
+    { icon: <SiCplusplus className="text-2xl text-blue-500" />, delay: 3 },
+    { icon: <AiOutlineDotNet className="text-2xl" />, delay: 2.5 },
+    { icon: <GrFedora className="text-2xl text-blue-500" />, delay: 2 },
+    { icon: <DiJava className="text-2xl text-red-500" />, delay: 2 }
+  ].map(({ icon, delay }, index) => (
+    <motion.div
+      key={index}
+      variants={iconVariants(delay)}
+      initial="initial"
+      animate="animate"
+      className="rounded-xl border-2 border-neutral-800 p-2 flex justify-center"
+    >
+      {icon}
+    </motion.div>
+  ))}
+</motion.div>
 
-        <motion.div
-          variants={iconVariants(1.8)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <SiHtml5 className="text-7xl text-red-600" />
-        </motion.div>
-        <motion.div
-          variants={iconVariants(2.1)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <SiCss3 className="text-7xl text-blue-600" />
-        </motion.div>
-        <motion.div
-          variants={iconVariants(2)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <SiTailwindcss className="text-7xl text-cyan-400" />
-        </motion.div>
-        <motion.div
-          variants={iconVariants(2.5)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <FaNodeJs className="text-7xl text-green-500" />
-        </motion.div>
-        <motion.div
-          variants={iconVariants(2.5)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <RiReactjsLine className="text-7xl text-cyan-400" />
-        </motion.div>
-
-        <motion.div
-          variants={iconVariants(2.9)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <TbBrandNextjs className="text-7xl " />
-        </motion.div>
-        <motion.div
-          variants={iconVariants(2)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <SiMongodb className="text-7xl text-green-500" />
-        </motion.div>
-        {/* <motion.div
-          variants={iconVariants(3)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <DiRedis className="text-7xl text-red-700" />
-        </motion.div> */}
-
-        {/* <motion.div
-          variants={iconVariants(2.1)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <SiPostgresql className="text-7xl text-sky-700" />
-        </motion.div> */}
-        <motion.div
-          variants={iconVariants(3)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <FaRobot className="text-7xl text-yellow-300" />
-        </motion.div>
-        <motion.div
-          variants={iconVariants(2.9)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <SiFlask className="text-7xl text-blue-500" />
-        </motion.div>
-        {/* <motion.div
-          variants={iconVariants(2.5)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <AiOutlineRobot className="text-7xl text-blue-500" />
-        </motion.div> */}
-        <motion.div
-          variants={iconVariants(2)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <SiTensorflow className="text-7xl text-orange-500" />
-        </motion.div>
-
-
-        <motion.div
-          variants={iconVariants(2.4)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <SiMysql className="text-7xl text-blue-700" />
-        </motion.div>
-        <motion.div
-          variants={iconVariants(1.9)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <SiPhp className="text-7xl text-purple-500" />
-        </motion.div>
-        <motion.div
-          variants={iconVariants(3)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <SiCplusplus className="text-7xl text-blue-500" />
-        </motion.div>
-        {/* <motion.div
-          variants={iconVariants(4)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <SiNvidia className="text-7xl text-green-500" />
-        </motion.div> */}
-
-        <motion.div
-          variants={iconVariants(2.5)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-3 flex justify-center"
-        >
-
-          <AiOutlineDotNet className="text-7xl " />
-        </motion.div>
-        <motion.div
-          variants={iconVariants(2)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <GrFedora className="text-7xl text-blue-500" />
-        </motion.div>
-        <motion.div
-          variants={iconVariants(2)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4 flex justify-center space-x-4"
-        >
-          <DiJava className="text-7xl text-red-500" />
-        </motion.div>
-      </motion.div>
     </div>
   );
 };

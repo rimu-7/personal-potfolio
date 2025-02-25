@@ -2,6 +2,7 @@ import { HERO_CONTENT } from "../constants";
 import profilePic from "../assets/rimu.png";
 import { motion } from "framer-motion"
 import Technologies from "./Technologies";
+import useDelayedRender from "../Shared/Loader/useDelayedRender";
 
 const container = (delay) => ({
   hidden: { x: -200, opacity: 0 },
@@ -13,7 +14,7 @@ const container = (delay) => ({
 })
 
 const Hero = () => {
-  return (
+  return  (
    <div className=" px-4 sm:px-20 ">
      <div className=" lg:mb-35  border-b border-neutral-900">
       <div className="flex flex-wrap mb-10 ">

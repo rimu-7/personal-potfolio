@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { motion } from "framer-motion";
 
 const Blogs = () => {
   const [blogs, setBlogs] = useState([]);
@@ -39,15 +40,29 @@ const Blogs = () => {
   }
 
   return (
-    <div className="fixed sm:mx-40 bg-green-200 w-full h-full px-4">
+    <div className="fixed sm:mx-40 bg-green-200 w-full  h-full px-4">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {blogs.length === 0 ? (
           <p className="text-2xl text-center col-span-full">No blogs available.</p>
         ) : (
           blogs.map((blog) => (
-            <div
+            <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: { opacity: 0, y: 50 },
+              visible: {
+                opacity: 1,
+                y: 0,
+                transition: {
+                  duration: 1.2,
+                  ease: "easeInOut",
+                  staggerChildren: 0.2, // Smooth staggered effect
+                },
+              },
+            }}
               key={blog.blog_id}
-              className="border border-neutral-700 p-2 w-96 h-66  rounded-lg shadow-lg hover:shadow-xl transition overflow-hidden"
+              className="border mx-auto border-neutral-700 p-2 w-96 h-66  rounded-lg shadow-lg hover:shadow-xl transition overflow-hidden"
             >
               <Link to={`/blogdetails/${blog.blog_id}`}>
                 <img
@@ -66,7 +81,7 @@ const Blogs = () => {
                   </h3>
                 </div>
               </Link>
-            </div>
+            </motion.div>
           ))
         )}
       </div>
