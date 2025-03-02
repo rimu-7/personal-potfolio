@@ -9,6 +9,9 @@ import Blogs from "../components/Blogs";
 import Experiences from "../components/Experiences"; // Fixed spelling
 import Projects from "../components/Projects";
 import BlogDetails from "../components/BlogDetails";
+import { lazy, Suspense } from "react";
+
+const LazyProjects = lazy(() => import("../components/Projects"));
 
 export const router = createBrowserRouter([
   {
@@ -32,10 +35,16 @@ export const router = createBrowserRouter([
         path: "contact",
         element: <Contacts />,
       },
+
       {
         path: "projects",
-        element: <Projects />,
-      },
+        element: (
+          <Suspense fallback={<div>Loading...</div>}>
+            <LazyProjects />
+          </Suspense>
+        ),
+      }
+      ,
       {
         path: "experiences", // Fixed spelling
         element: <Experiences />,

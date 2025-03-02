@@ -16,11 +16,8 @@ const NavButton = ({ isOpen, toggleMenu }) => {
         xmlns="http://www.w3.org/2000/svg"
       >
         {/* Top Line */}
-        <motion.line
-          x1="4"
-          y1="6"
-          x2="20"
-          y2="6"
+        <motion.path
+          d="M4 6h16"
           stroke="currentColor"
           strokeWidth="2"
           strokeLinecap="round"
@@ -29,11 +26,8 @@ const NavButton = ({ isOpen, toggleMenu }) => {
           transition={{ duration: 0.3, ease: "easeInOut" }}
         />
         {/* Middle Line */}
-        <motion.line
-          x1="4"
-          y1="12"
-          x2="20"
-          y2="12"
+        <motion.path
+          d="M4 12h16"
           stroke="currentColor"
           strokeWidth="2"
           strokeLinecap="round"
@@ -42,11 +36,8 @@ const NavButton = ({ isOpen, toggleMenu }) => {
           transition={{ duration: 0.2, ease: "easeInOut" }}
         />
         {/* Bottom Line */}
-        <motion.line
-          x1="4"
-          y1="18"
-          x2="20"
-          y2="18"
+        <motion.path
+          d="M4 18h16"
           stroke="currentColor"
           strokeWidth="2"
           strokeLinecap="round"

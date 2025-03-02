@@ -49,13 +49,13 @@ const DropdownMenu = () => {
             key={item.path}
             className="relative cursor-pointer hover:scale-105 hover:duration-500"
             variants={itemVariants}
-            whileHover={{ scale: 1.1, color: "" }}
+            whileHover={{ scale: 1.1}}
             whileTap={{ scale: 0.95 }}
             onClick={() => setSelectedTab(item.path)}
           >
             <Link
               to={item.path}
-              className="hover:scale-125 text-2xl text-green-500 font-bold hover:duration-500  transition-transform"
+              className="hover:scale-125 text-2xl  font-bold hover:duration-500  transition-transform"
             >
               {item.name}
             </Link>
@@ -66,7 +66,7 @@ const DropdownMenu = () => {
                 layoutId="underline"
                 className="absolute left-0 right-0 h-[3px] bg-green-400 bottom-[-4px]"
                 initial={false}
-                animate={{ backgroundColor: "rgb(74, 222, 128)" }} // Ensure smooth transition of background color
+                animate={{ backgroundColor: "" }} // Ensure smooth transition of background color
                 transition={{ type: "spring", stiffness: 150, damping: 70 }} // Adjusted for a smoother effect
               />
             )}
