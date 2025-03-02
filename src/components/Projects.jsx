@@ -43,16 +43,16 @@ const Projects = () => {
   const hasFeatures = projects.features && projects.features.length > 0;
 
   return (
-    <div className="min-h-screen  border-neutral-800  px-4">
+    <div className="min-h-screen border-neutral-800 px-4 overflow-x-hidden">
       <motion.h2
-        whileInView={{ opacity: 1, y: 0 }}
-        initial={{ opacity: 0, y: 50 }}
-        transition={{ duration: 2 }}
-        className="my-16 text-center text-4xl font-bold"
-      >
-        Projects
-      </motion.h2>
-      <div className="max-w-5xl mx-auto ">
+      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, y: 50 }}
+      transition={{ duration: 2 }}
+      className="my-16 text-center text-4xl font-bold"
+    >
+      Projects
+    </motion.h2>
+      <div className="max-w-5xl mx-auto w-full">
         {projects.map((project, index) => (
           <div
             className="mb-10 flex flex-col lg:flex-row items-center border-b border-neutral-800 p-2 sm:border-hidden lg:items-start gap-6"
@@ -63,12 +63,12 @@ const Projects = () => {
               whileInView={{ opacity: 1, x: 0 }}
               initial={{ opacity: 0, x: -50 }}
               transition={{ duration: 2 }}
-              className="flex-shrink-0  max-w-[300px] lg:w-1/3"
+              className="flex-shrink-0 max-w-[300px] lg:w-1/3"
             >
               <img
                 src={project.image}
                 alt={project.title}
-                className=" h-auto rounded-lg shadow-lg"
+                className="h-auto rounded-lg shadow-lg"
               />
             </motion.div>
 
@@ -77,7 +77,7 @@ const Projects = () => {
               whileInView={{ opacity: 1, x: 0 }}
               initial={{ opacity: 0, x: 50 }}
               transition={{ duration: 2 }}
-              className=" lg:w-2/3"
+              className="lg:w-2/3"
             >
               <h6 className="mb-3 font-semibold text-xl">
                 <a
@@ -109,9 +109,7 @@ const Projects = () => {
                     <strong>Features:</strong> {project.features.join(", ")}
                   </p>
                 )}
-
               </div>
-
 
               <div className="flex flex-wrap gap-2">
                 <ul className="space-y-2">
@@ -119,14 +117,13 @@ const Projects = () => {
                     .flatMap((tech) => tech.split(",")) // Split items containing commas
                     .map((tech, index) => (
                       <span
-                        className="mr-2 mb-2 my-2 rounded bg-gray-700 px-4 py-0.5 text-sm font-medium text-rose-400"
+                        className=" rounded bg-gray-700 px-4 py-0.5 m-1 text-sm font-medium text-rose-400"
                         key={index}
                       >
                         {tech.trim()} {/* Trim removes unwanted spaces */}
                       </span>
                     ))}
                 </ul>
-
               </div>
             </motion.div>
           </div>
