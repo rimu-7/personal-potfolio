@@ -40,7 +40,7 @@ const Blogs = () => {
   }
 
   return (
-    <div className="fixed sm:mx-40 bg-green-200 w-full  h-full px-4">
+    <div className="fixed  w-full  h-full px-4">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {blogs.length === 0 ? (
           <p className="text-2xl text-center col-span-full">No blogs available.</p>

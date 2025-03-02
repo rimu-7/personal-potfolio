@@ -5,7 +5,7 @@ const Projects = () => {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  
+
   useEffect(() => {
     fetch("https://personal-backend-nine.vercel.app/api/projects") // Update the URL if deployed
       .then((response) => {
@@ -24,20 +24,20 @@ const Projects = () => {
       })
       .finally(() => setLoading(false));
   }, []);
-  
+
   if (loading) {
     return <div className="text-center text-2xl mt-10">Loading Projects...</div>;
   }
-  
+
   if (error) {
     return <div className="text-center mt-10 text-red-500">{error}</div>;
   }
-  
+
   // Render projects list here
-  
-  
+
+
   // Render projects list here
-  
+
 
   //check if the project has feature or not
   const hasFeatures = projects.features && projects.features.length > 0;
@@ -109,19 +109,24 @@ const Projects = () => {
                     <strong>Features:</strong> {project.features.join(", ")}
                   </p>
                 )}
-                
+
               </div>
 
 
               <div className="flex flex-wrap gap-2">
-                {project.technologies.map((tech, idx) => (
-                  <span
-                    key={idx}
-                    className="bg-gray-700 text-rose-400 text-sm font-medium px-3 py-1 rounded-md"
-                  >
-                    {tech}
-                  </span>
-                ))}
+                <ul className="space-y-2">
+                  {project.technologies
+                    .flatMap((tech) => tech.split(",")) // Split items containing commas
+                    .map((tech, index) => (
+                      <span
+                        className="mr-2 mb-2 my-2 rounded bg-gray-700 px-4 py-0.5 text-sm font-medium text-rose-400"
+                        key={index}
+                      >
+                        {tech.trim()} {/* Trim removes unwanted spaces */}
+                      </span>
+                    ))}
+                </ul>
+
               </div>
             </motion.div>
           </div>

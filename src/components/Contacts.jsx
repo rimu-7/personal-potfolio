@@ -3,6 +3,8 @@ import { CONTACT } from "../constants";
 import emailjs from "emailjs-com";
 import "../index.css";
 import { motion } from "framer-motion";
+import { ToastContainer, toast } from "react-toastify"; // Import ToastContainer and toast
+import "react-toastify/dist/ReactToastify.css"; // Import the CSS for toast notifications
 
 const Contacts = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -33,15 +35,39 @@ const Contacts = () => {
         setIsSubmitted(true);
         document.getElementById("emailInput").value = "";
         document.getElementById("messageInput").value = "";
+
+        // Show success toast notification
+        toast.success("Message sent successfully!", {
+          position: "top-right",
+          autoClose: 3000, // Close after 3 seconds
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
       })
       .catch((err) => {
         console.error("Failed to send email. Error: ", err);
-        alert("Failed to send email. Please try again later.");
+
+        // Show error toast notification
+        toast.error("Failed to send email. Please try again later.", {
+          position: "top-right",
+          autoClose: 3000, // Close after 3 seconds
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
       });
   };
 
   return (
-    <div className=" pb-20">
+    <div className="pb-20">
+      {/* Toast Container */}
+      <ToastContainer />
+
       <motion.h2
         whileInView={{ opacity: 1, y: 0 }}
         initial={{ opacity: 0, y: 100 }}
@@ -50,35 +76,162 @@ const Contacts = () => {
       >
         Get In Touch
       </motion.h2>
-      <div className="text-center text-neutral-500">
+      <div className="text-center">
         <motion.p
           whileInView={{ opacity: 1, x: 0 }}
           initial={{ opacity: 0, x: 100 }}
           transition={{ duration: 1 }}
-          className="my-4"
+          className="my-4 hover:text-green-300 duration-300 transition-colors cursor-pointer relative group"
+          onClick={() => {
+            navigator.clipboard.writeText(CONTACT.address)
+              .then(() => {
+                toast.success("Address copied to clipboard!", {
+                  position: "top-right",
+                  autoClose: 3000,
+                  hideProgressBar: false,
+                  closeOnClick: true,
+                  pauseOnHover: true,
+                  draggable: true,
+                  progress: undefined,
+                });
+              })
+              .catch((err) => {
+                console.error("Failed to copy address: ", err);
+                toast.error("Failed to copy address. Please try again.", {
+                  position: "top-right",
+                  autoClose: 3000,
+                  hideProgressBar: false,
+                  closeOnClick: true,
+                  pauseOnHover: true,
+                  draggable: true,
+                  progress: undefined,
+                });
+              });
+          }}
         >
           {CONTACT.address}
+          <span className="absolute -bottom-5 left-1/2 transform -translate-x-1/2 bg-neutral-700 text-white text-sm px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            Click to copy
+          </span>
         </motion.p>
 
-        <motion.p
+        {/* <motion.p
           whileInView={{ opacity: 1, x: 0 }}
           initial={{ opacity: 0, x: 100 }}
           transition={{ duration: 1 }}
-          className="my-4"
+          onClick={() => {
+            navigator.clipboard.writeText(CONTACT.email)
+              .then(() => {
+                toast.success("Email copied to clipboard!", {
+                  position: "top-right",
+                  autoClose: 3000,
+                  hideProgressBar: false,
+                  closeOnClick: true,
+                  pauseOnHover: true,
+                  draggable: true,
+                  progress: undefined,
+                });
+              })
+              .catch((err) => {
+                console.error("Failed to copy email: ", err);
+                toast.error("Failed to copy email. Please try again.", {
+                  position: "top-right",
+                  autoClose: 3000,
+                  hideProgressBar: false,
+                  closeOnClick: true,
+                  pauseOnHover: true,
+                  draggable: true,
+                  progress: undefined,
+                });
+              });
+          }}
+          className="border-b-2 border-green-300 hover:text-green-300 duration-300 transition-colors cursor-pointer"
+          target="_self"
         >
           {CONTACT.phoneNo}
-        </motion.p>
+        </motion.p> */}
         <motion.div
           whileInView={{ opacity: 1, x: 0 }}
           initial={{ opacity: 0, x: -100 }}
-          transition={{ duration: 1 }}>
+          transition={{ duration: 1 }}
+          className="relative group m-4"
+        >
           <a
-
-            href={`mailto:${CONTACT.email}`}
-            className="border-b border-neutral-400"
+            onClick={() => {
+              navigator.clipboard.writeText(CONTACT.phoneNo)
+                .then(() => {
+                  toast.success("phoneNo copied to clipboard!", {
+                    position: "top-right",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                  });
+                })
+                .catch((err) => {
+                  console.error("Failed to copy phoneNo: ", err);
+                  toast.error("Failed to copy phoneNo. Please try again.", {
+                    position: "top-right",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                  });
+                });
+            }}
+            className="border-b-2 border-green-300 hover:text-green-300 duration-300 transition-colors cursor-pointer"
+            target="_self"
+          >
+            {CONTACT.phoneNo}
+            <span className="absolute -bottom-5 left-1/2 transform -translate-x-1/2 bg-neutral-700 text-white text-sm px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              Click to copy
+            </span>
+          </a>
+        </motion.div>
+        <motion.div
+          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, x: -100 }}
+          transition={{ duration: 1 }}
+          className="relative group m-4"
+        >
+          <a
+            onClick={() => {
+              navigator.clipboard.writeText(CONTACT.email)
+                .then(() => {
+                  toast.success("Email copied to clipboard!", {
+                    position: "top-right",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                  });
+                })
+                .catch((err) => {
+                  console.error("Failed to copy email: ", err);
+                  toast.error("Failed to copy email. Please try again.", {
+                    position: "top-right",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                  });
+                });
+            }}
+            className="border-b-2 border-green-300 hover:text-green-300 duration-300 transition-colors cursor-pointer"
             target="_self"
           >
             {CONTACT.email}
+            <span className="absolute -bottom-5 left-1/2 transform -translate-x-1/2 bg-neutral-700 text-white text-sm px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              Click to copy
+            </span>
           </a>
         </motion.div>
 
@@ -91,7 +244,7 @@ const Contacts = () => {
               type="email"
               id="emailInput"
               placeholder="Your email"
-              className="outline-none border border-neutral-700 bg-green-100 rounded-lg p-2 h-10 w-full text-neutral-900"
+              className="outline-none border-2 border-green-300 rounded-lg p-2 h-10 w-full bg-transparent"
               required
             />
             <motion.textarea
@@ -100,27 +253,23 @@ const Contacts = () => {
               transition={{ duration: 1 }}
               id="messageInput"
               placeholder="Your message"
-              className="outline-none border border-neutral-700 bg-green-100 rounded-lg p-2 h-40 w-full resize-none text-neutral-900"
+              className="outline-none border-2 border-green-300 rounded-lg p-2 h-40 w-full resize-none bg-transparent"
               required
             />
             <motion.button
               whileInView={{ opacity: 1, x: 0 }}
               initial={{ opacity: 0, x: 100 }}
               transition={{ duration: 1 }}
-              className="self-end bg-royalblue rounded-lg p-2 font-medium cursor-pointer border border-neutral-700 bg-green-300 text-neutral-700"
+              className="self-end rounded-lg p-2 font-medium cursor-pointer bg-green-400 hover:bg-green-500 duration-300 transition-colors"
               onClick={handleSendMessage}
             >
               Submit
             </motion.button>
           </form>
         </div>
-        {isSubmitted && (
-          <div className="mt-4 text-green-500">Message sent successfully!</div>
-        )}
       </div>
     </div>
   );
 };
 
-// Ensure export is at the top level
 export default Contacts;
