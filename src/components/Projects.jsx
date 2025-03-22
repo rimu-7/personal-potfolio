@@ -107,7 +107,7 @@ const Projects = () => {
   const hasFeatures = projects.features && projects.features.length > 0;
 
   return (
-    <div className="min-h-screen w-full md:w-[80%] mx-auto items-center justify-center px-4 overflow-x-hidden">
+    <div className="min-h-screen w-full md:w-[80%] mx-auto items-center justify-center px-4 overflow-x-hidden ">
       {/* Floating Scroll-to-Top Button */}
       {showScrollButton && (
         <button
@@ -154,7 +154,7 @@ const Projects = () => {
       >
         Projects
       </motion.h2>
-      <div className="max-w-5xl mx-auto w-full">
+      <div className="max-w-5xl mx-auto w-full ">
         {projects.map((project, index) => (
           <div
             className="mb-10 flex flex-col lg:flex-row items-center border-b border-neutral-800 p-2 sm:border-hidden lg:items-start gap-6"
@@ -199,7 +199,7 @@ const Projects = () => {
               whileInView={{ opacity: 1, x: 0 }}
               initial={{ opacity: 0, x: 50 }}
               transition={{ duration: 2 }}
-              className="lg:w-2/3"
+              className="lg:w-2/3 "
             >
               <h6 className="mb-3 font-semibold text-xl">
                 <div className="flex items-center gap-2">
@@ -215,7 +215,7 @@ const Projects = () => {
                     <img src={git} alt="GitHub" className="w-5 h-5 hidden dark:block" />
                   </a>
 
-                  <span className="text-gray-500">|</span>
+                  <span className="">|</span>
 
                   <a
                     href={project.liveDemo}
@@ -228,7 +228,7 @@ const Projects = () => {
                 </div>
               </h6>
 
-              <p className="mb-4 text-neutral-500 text-justify">
+              <p className="mb-4  text-justify">
                 {project.description}
               </p>
 

@@ -5,9 +5,39 @@
 @tailwind components;
 @tailwind utilities;
 
-:root{
-  font-family: "Itim", cursive;
-  font-weight: 400;
-  font-style: normal;
-}
 
+
+@layer utilities {
+  .bg-dot-light {
+    --dot-bg: rgb(255, 255, 255);
+    --dot-color: black;
+    --dot-size: 2px;
+    --dot-space: 30px;
+    background:
+      linear-gradient(90deg, var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
+      linear-gradient(var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
+      var(--dot-color);
+    animation: move-dots 3s linear infinite;
+  }
+
+  .bg-dot-dark {
+    --dot-bg: #212121;
+    --dot-color: white;
+    --dot-size: 1px;
+    --dot-space: 30px;
+    background:
+      linear-gradient(90deg, var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
+      linear-gradient(var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 01%) center / var(--dot-space) var(--dot-space),
+      var(--dot-color);
+    animation: move-dots 3s linear infinite;
+  }
+
+  @keyframes move-dots {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: var(--dot-space) var(--dot-space);
+    }
+  }
+}

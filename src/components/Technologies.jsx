@@ -76,7 +76,7 @@ const Technologies = () => {
       variants={iconVariants(delay)}
       initial="initial"
       animate="animate"
-      className="rounded-xl border-2 border-neutral-800 p-2 flex justify-center"
+      className="rounded-xl border-2 border-green-400 p-2 flex justify-center"
     >
       {icon}
     </motion.div>
