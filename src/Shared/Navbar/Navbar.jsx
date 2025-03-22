@@ -64,7 +64,7 @@ const Navbar = () => {
           onClick={() => setDarkMode(!darkMode)}
           className="px-4 py-2 ml-4 text-2xl rounded-md"
         >
-          {darkMode ? "☀️" : "🌠"}
+          {darkMode ? "☀️" : "🌙"}
         </button>
       </div>
 
