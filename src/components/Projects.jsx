@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import git from '../assets/github.png'
-import git2 from '../assets/github-dark.png'
+import git2 from '../assets/github.png'
+import git from '../assets/github-dark.png'
 import { toast, ToastContainer } from "react-toastify";
 
 const Projects = () => {
